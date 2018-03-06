@@ -1,4 +1,6 @@
-		<div class="sidebar-catalog">
+        <?php dynamic_sidebar('homepage-sidebar')?>
+        
+        <!-- <div class="sidebar-catalog">
             <h3 class="main-title cat-title">Категории</h3>
             <div class="burger-cat"></div>
             <ul class="cat-list">
@@ -25,4 +27,4 @@
                 <li><a class="cat-link" href="#">Кинозвезды</a></li>
                 <li><a class="cat-link" href="#">Детские</a></li>
             </ul>
-        </div>
+        </div> -->

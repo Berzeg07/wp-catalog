@@ -168,33 +168,33 @@ body {
   }
 }
 
-.bradcrumbs {
+.breadcrumbs-wrap {
   max-width: 1140px;
   margin: 25px auto;
   padding: 0px 15px;
 }
 
-.bradcrumbs ul {
+.breadcrumbs {
   border-radius: 5px;
   padding: 5px 15px;
   background: #F5F5F5;
   font-size: 15px;
 }
 
-.bradcrumbs ul {
+.breadcrumbs {
   display: flex;
   flex-wrap: wrap;
 }
 
-.bradcrumbs li:not(:last-child) {
+.breadcrumbs li:not(:last-child) {
   margin-right: 5px;
 }
 
-.bradcrumbs li:not(:last-child) a {
+.breadcrumbs li:not(:last-child) a {
   color: #444444;
 }
 
-.bradcrumbs a {
+.breadcrumbs a {
   text-decoration: none;
   color: inherit;
 }
@@ -350,7 +350,7 @@ body {
   }
 }
 
-.main-nav_link {
+.main-nav li a {
   color: white;
   display: inline-block;
   padding: 15px 0px;
@@ -360,18 +360,18 @@ body {
   transition: 0.5s;
 }
 
-.main-nav_link:hover {
+.main-nav li a:hover {
   background: #3AC195;
 }
 
 @media only screen and (min-width: 768px) {
-  .main-nav_link {
+  .main-nav li a {
     background: white;
     display: inline-block;
     color: #3AC195;
     padding: 19px 15px;
   }
-  .main-nav_link:hover {
+  .main-nav li a:hover {
     background: #3AC195;
     color: white;
   }
@@ -379,7 +379,7 @@ body {
     background: #3AC195;
     color: white;
   }
-}
+} 
 
 .slider-wrap {
   display: none;
@@ -691,7 +691,7 @@ body {
   margin-bottom: 5px;
 }
 
-.pagination li a {
+.pagination li a, .pagination li span {
   display: inline-block;
   text-decoration: none;
   border: 1px solid #E8E8E8;
@@ -708,7 +708,7 @@ body {
 }
 
 @media only screen and (min-width: 768px) {
-  .pagination li a {
+  .pagination li a, .pagination li span {
     padding: 7px 15px;
   }
 }

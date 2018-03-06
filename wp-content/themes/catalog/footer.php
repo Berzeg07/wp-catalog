@@ -22,12 +22,14 @@
 </footer>
 
 
+	
+</body>
+	<?php wp_footer();?>
 	<!-- JS_BLOCK -->
 	<script src="<?php echo get_template_directory_uri(); ?>/libs/jquery/jquery-3.2.1.min.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/common.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/libs/owl.carousel/owl.carousel.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.maskedinput.min.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/fonts.js"></script>
-    <?php wp_footer();?>
-</body>
+    
 </html>

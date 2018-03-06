@@ -2,7 +2,7 @@
 
 <?php get_header();?>
 
-<div class="slider-wrap">
+<!-- <div class="slider-wrap">
     <div class="promo_slider owl-carousel owl-theme">
         <div class="slide">
             <img src="<?php bloginfo('template_url')?>/img/test.jpg" alt="">
@@ -14,13 +14,14 @@
             <img src="<?php bloginfo('template_url')?>/img/test.jpg" alt="">
         </div>
     </div>
-</div>
+</div> -->
 
-<div class="bradcrumbs">
+<!-- <div class="bradcrumbs">
     <ul>
         <li><a href="#">Каталог </a></li>
     </ul>
-</div>  
+</div>   -->
+<?php get_template_part('templates/breadcrumbs'); ?>
 
 <div class="catalog container"> 
     <div class="catalog_inner">  
@@ -56,18 +57,8 @@
                
                 
             </div>
+            <?php catalog_pagination(); ?>
 
-            <div class="pagination">
-                <ul>
-                    <li><a href="#">Назад</a></li>
-                    <li><a class="active" href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">...</a></li>
-                    <li><a href="#">50</a></li>
-                    <li><a href="#">Далее</a></li>
-                </ul>
-            </div>
         </div>
     </div>
 </div>
