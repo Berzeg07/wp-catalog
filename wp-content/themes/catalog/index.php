@@ -25,11 +25,13 @@
 
 <div class="catalog container"> 
     <div class="catalog_inner">  
+
         <?php get_sidebar();?>
 
         <div class="content-catalog">
             <div class="category-top">
-                <h1 class="main-title">Каталог</h1>
+                <!-- <h1 class="main-title">Каталог</h1>
+                 --><h1 class="main-title"><?php single_cat_title()?></h1>
                 <div class="search-box">
                     <form action="#" method="post">
                         <input class="search-area" type="text" placeholder="Поиск">
@@ -54,14 +56,25 @@
 				
 				<?php endif; ?>
 			
-               
-                
-            </div>
+             </div>
             <?php catalog_pagination(); ?>
 
         </div>
     </div>
 </div>
+
+<div class="cateory-desc container">
+
+    <?php
+        if (is_category()) {
+        if (is_paged()) { echo '';}
+        else {
+            echo category_description(); }
+        }
+    ?>
+
+</div>
+
 <?php get_footer();?>
 
 

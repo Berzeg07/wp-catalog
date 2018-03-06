@@ -158,14 +158,14 @@ body {
 
 .main-title {
   color: #444;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 500;
 }
 
-@media only screen and (min-width: 768px) {
-  .main-title {
-    font-size: 26px;
-  }
+.cateory-desc h2{
+  color: #444;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .breadcrumbs-wrap {
@@ -954,8 +954,12 @@ body {
   width: 100%;
 }
 
-.cateory-bottom h2,
-.cateory-bottom p {
+.cateory-desc{
+  padding-top: 20px;
+}
+
+.cateory-desc h2,
+.cateory-desc p {
   padding-bottom: 15px;
 }
 
