@@ -14,7 +14,7 @@
 
 <header class="header-wrap">
     <div class="header container">
-        <div class="logo"><a href="#">PrintHouse</a></div>
+        <div class="logo"><a href="index.php">PrintHouse</a></div>
         <nav class="main-nav">
             <span class="main-nav_burger"></span>
             <?php wp_nav_menu(array(

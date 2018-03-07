@@ -25,32 +25,25 @@
             </div>
         </div>
         
-
-        <div class="product-page_info">
-        <p>Размеры: <span><?php the_field('razmer') ?></span></p>
-        <p>Материал: <span><?php the_field('material') ?></span></p>
-        <p>Цвет: <span> <?php the_field('color') ?></span></p>
-        <p>Тип печати: <span><?php the_field('tip_pechati') ?></span></p>
-        <p>Формат печати: <span><?php the_field('format_pechati') ?></span></p>
-        <p class="product-page_price">Цена: <span> <?php the_field('price') ?></span> руб.</p> 
-          
-          
         
-            <!-- <p>Размеры: <span>XS, S, M, L, XL, 2XL</span></p> -->
+    <div class="product-page_info">
+            <div class="about-order">
+                <span>Характеристики</span>
+            </div>
             
-            <!-- <p>Материал: <span> Хлопок / Лайкра (+ 100 руб.)</span></p>
-            
-            <p>Цвет: <span> Белый, черный, красный, синий</span></p>
-            
-            <p>Тип печати: <span>Прямая печать текстильными красками</span></p>
-            
-            <p>Формат печати: <span>А4</span></p> -->
-            <!-- <p class="product-page_price">Цена: <span> 1099 руб.</span></p> -->
-          
-            <!-- <a class="blog-box_btn product-page_btn" href="#">Как заказать</a> -->
+            <div class="product-page_contact">
+                <p>Размеры: <span><?php the_field('razmer') ?></span></p>
+                <p>Материал: <span><?php the_field('material') ?></span></p>
+                <p>Цвет: <span> <?php the_field('color') ?></span></p>
+                <p>Тип печати: <span><?php the_field('tip_pechati') ?></span></p>
+                <p>Формат печати: <span><?php the_field('format_pechati') ?></span></p>
+                <p class="product-page_price">Цена: <span> <?php the_field('price') ?></span> руб.</p> 
+            </div>
+
             <div class="about-order">
                 <span>Как заказать</span>
             </div>
+
             <div class="product-page_contact">
                 <p class="product-page_contact__title">Для заказа обращайтесь по указанным контактам</p>
                 <span class="product-page_phone"><?php the_field('phone') ?></span><br>

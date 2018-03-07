@@ -1,15 +1,15 @@
 $(document).ready(function () {
 
-	$('.promo_slider').owlCarousel({
-		loop: true,
-		margin: 0,
-		nav: true,
-		dots: true,
-		items: 1,
-		autoplay: false,
-		autoplaySpeed: 1000,
-		navText: ['<span class="nav-left"></span>', '<span class="nav-right"></span>'],
-	});
+	// $('.promo_slider').owlCarousel({
+	// 	loop: true,
+	// 	margin: 0,
+	// 	nav: true,
+	// 	dots: true,
+	// 	items: 1,
+	// 	autoplay: false,
+	// 	autoplaySpeed: 1000,
+	// 	navText: ['<span class="nav-left"></span>', '<span class="nav-right"></span>'],
+	// });
 
 	$('.product_slider').owlCarousel({
 		loop: true,

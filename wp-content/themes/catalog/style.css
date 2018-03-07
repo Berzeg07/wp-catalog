@@ -168,6 +168,10 @@ body {
   font-weight: 500;
 }
 
+.search-result{
+  padding:40px 0px;
+}
+
 .breadcrumbs-wrap {
   max-width: 1140px;
   margin: 25px auto;
@@ -1031,7 +1035,7 @@ body {
 
 @media only screen and (min-width: 768px) {
   .product-page_info {
-    margin: 25px 0 0 60px;
+    margin: 0px 0 20px 60px;
   }
 }
 
