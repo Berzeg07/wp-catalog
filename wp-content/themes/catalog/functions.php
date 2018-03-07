@@ -1,5 +1,59 @@
 <?php
 
+// произвольные поля ACF
+// if(function_exists("register_field_group"))
+// {
+// 	register_field_group(array (
+// 		'id' => 'acf_%d1%85%d0%b0%d1%80%d0%b0%d0%ba%d1%82%d0%b5%d1%80%d0%b8%d1%81%d1%82%d0%b8%d0%ba%d0%b8',
+// 		'title' => 'Характеристики',
+// 		'fields' => array (
+// 			array (
+// 				'key' => 'field_5a9fae0c7ccbb',
+// 				'label' => 'Характеристики',
+// 				'name' => 'product',
+// 				'type' => 'text',
+// 				'required' => 1,
+// 				'default_value' => '',
+// 				'placeholder' => '',
+// 				'prepend' => '',
+// 				'append' => '',
+// 				'formatting' => 'html',
+// 				'maxlength' => '',
+// 			),
+// 		),
+// 		'location' => array (
+// 			array (
+// 				array (
+// 					'param' => 'page',
+// 					'operator' => '==',
+// 					'value' => '8',
+// 					'order_no' => 0,
+// 					'group_no' => 0,
+// 				),
+// 			),
+// 		),
+// 		'options' => array (
+// 			'position' => 'normal',
+// 			'layout' => 'no_box',
+// 			'hide_on_screen' => array (
+// 			),
+// 		),
+// 		'menu_order' => 0,
+// 	));
+// }
+
+// меню в футере ==========================================================================
+
+function register_my_menus() {
+  register_nav_menus(
+    array(
+      'FooterMenu' => __( 'FooterMenu' )
+    )
+  );
+}
+add_action( 'init', 'register_my_menus' );
+
+
 // сайдбар ====================================================================
 function catalog_widgets(){
 	register_sidebar( array(
@@ -14,7 +68,7 @@ function catalog_widgets(){
 }
 add_action( 'widgets_init', 'catalog_widgets' );
 
-//миниатюры ===================================================================
+//миниатюры анонсов записей ===================================================================
 add_theme_support( 'post-thumbnails'); 
 
 // меню =======================================================================
@@ -47,7 +101,9 @@ function the_breadcrumb(){
 				// лишки
 				foreach ($breadcrumbs as $crumb) echo $crumb . '  ';
 			}
+			echo '<li>';
 			echo the_title();
+			echo '</li>';
 		}
 		elseif (is_category()) { // категории
 			global $wp_query;

@@ -15,12 +15,8 @@
 <header class="header-wrap">
     <div class="header container">
         <div class="logo"><a href="#">PrintHouse</a></div>
-
-        
-
         <nav class="main-nav">
             <span class="main-nav_burger"></span>
-            <!-- 'menu_class'=>'main-nav' -->
             <?php wp_nav_menu(array(
                 'theme_location'=>'menu',
                 'container'=>'false',
@@ -28,6 +24,5 @@
             
             )); ?>
         </nav>
-
     </div>
 </header>  

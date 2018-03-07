@@ -1,14 +1,23 @@
 <footer class="footer">
 	<ul class="footer_list container">
 		
-		<li class="footer_copy">Copyright &#169; 2018</li>
+		<!-- <li class="footer_copy">Copyright &#169; 2018</li>
+		 -->
+		 <li>
+		 <p>Навигация</p>
+		 <?php wp_nav_menu(array(
+                'theme_location'=>'menu',
+                'container'=>'false',
+                'depth'=>'1'
+            
+            )); ?></li>
 		<li>
 			<p>Информация</p>
-			<ul>
-				<li><a href="#">Как сделать заказ</a></li>
-				<li><a href="#">О доставке / способы оплаты</a></li>
-				<!-- <li><a href="#">Контакты</a></li> -->
-			</ul>
+			<?php wp_nav_menu(array( 
+				'theme_location' => 'FooterMenu',
+				'container'=>'false',
+                'depth'=>'1'
+			)); ?>
 		</li>
 		<li class="footer_contact">
 			<p>Контакты</p>
@@ -16,8 +25,6 @@
 			<span class="product-page_inst">printhouse07</span><br>
 			<span class="product-page_email">test@gmail.com</span><br>
 		</li>
-		<!-- <li><a href="#"><img src="img/inst.png" alt=""></a></li> -->
-		<!-- <li><a class="footer_phone" href="#">+7 (988) 987-25-11</a></li> -->
 	</ul>
 </footer>
 

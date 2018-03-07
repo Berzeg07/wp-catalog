@@ -16,11 +16,6 @@
     </div>
 </div> -->
 
-<!-- <div class="bradcrumbs">
-    <ul>
-        <li><a href="#">Каталог </a></li>
-    </ul>
-</div>   -->
 <?php get_template_part('templates/breadcrumbs'); ?>
 
 <div class="catalog container"> 
@@ -29,34 +24,20 @@
         <?php get_sidebar();?>
 
         <div class="content-catalog">
+
             <div class="category-top">
-                <!-- <h1 class="main-title">Каталог</h1>
-                 --><h1 class="main-title"><?php single_cat_title()?></h1>
-                <div class="search-box">
-                    <form action="#" method="post">
-                        <input class="search-area" type="text" placeholder="Поиск">
-                        <button type="submit"></button>
-                    </form>
-                </div>
+                <h1 class="main-title"><?php single_cat_title()?></h1>
+                <?php get_template_part('templates/search'); ?>
             </div>
 			
-
             <div class="product-box">
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post();?>
-					<div class="cart">
-                    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('full');?></a>
-                    <a class="blog-box_btn cart_btn" href="<?php the_permalink(); ?>">Подробнее</a>
-                    <div class="cart_info cat_info">
-                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br>
-                    </div>
-                </div>
+                <?php get_template_part('templates/cart') ?>
 				<?php endwhile; ?>
-				
 				<?php else: ?>
-				
 				<?php endif; ?>
-			
              </div>
+
             <?php catalog_pagination(); ?>
 
         </div>
@@ -64,7 +45,6 @@
 </div>
 
 <div class="cateory-desc container">
-
     <?php
         if (is_category()) {
         if (is_paged()) { echo '';}
@@ -72,7 +52,6 @@
             echo category_description(); }
         }
     ?>
-
 </div>
 
 <?php get_footer();?>
