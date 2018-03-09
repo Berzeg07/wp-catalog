@@ -1,47 +1,112 @@
 <?php
+function mayak_cat_keywords($keywords){
+	if(is_category()){
+	$terms = get_category( get_query_var( 'cat' ));
+	$cat_id = $terms->cat_ID;
+	$keywords = get_term_meta ( $cat_id, 'keywords', true );
+	echo '<meta name="keywords" content="'.$keywords.'">'."\n";
+	}
+}
+add_action('wp_head', 'mayak_cat_keywords', 1, 1);
+add_action("category_edit_form_fields", 'mayak_category_meta');
+function mayak_category_meta( $term ) {
+	?>
+		<tr class="form-field">
+			<th scope="row" valign="top"><label>Заголовок (title)</label></th>
+			<td>
+				<input type="text" name="mayak[title]" value="<?php echo esc_attr( get_term_meta( $term->term_id, 'title', 1 ) ) ?>"><br />
+				<p class="description">Не более 60 знаков, включая пробелы</p>
+			</td>
+		</tr>
+		<tr class="form-field">
+			<th scope="row" valign="top"><label>Заголовок h1</label></th>
+			<td>
+				<input type="text" name="mayak[h1]" value="<?php echo esc_attr( get_term_meta( $term->term_id, 'h1', 1 ) ) ?>"><br />
+				<p class="description">Заголовок страницы</p>
+			</td>
+		</tr>
+		<tr class="form-field">
+			<th scope="row" valign="top"><label>Ключевые слова</label></th>
+			<td>
+				<input type="text" name="mayak[keywords]" value="<?php echo esc_attr( get_term_meta( $term->term_id, 'keywords', 1 ) ) ?>"><br />
+				<p class="description">Ключевые слова (keywords)</p>
+			</td>
+		</tr>
+<tr class="form-field">
+<th scope="row" valign="top"><label>Краткое описание (description)</label></th>
+<td>
+<input type="text" name="mayak[description]" value="<?php echo esc_attr( get_term_meta( $term->term_id, 'description', 1 ) ) ?>"><br />
+<p class="description">Краткое описание (description)</p>
+</td>
+</tr>
+	<?php
+}
 
-// произвольные поля ACF
-// if(function_exists("register_field_group"))
-// {
-// 	register_field_group(array (
-// 		'id' => 'acf_%d1%85%d0%b0%d1%80%d0%b0%d0%ba%d1%82%d0%b5%d1%80%d0%b8%d1%81%d1%82%d0%b8%d0%ba%d0%b8',
-// 		'title' => 'Характеристики',
-// 		'fields' => array (
-// 			array (
-// 				'key' => 'field_5a9fae0c7ccbb',
-// 				'label' => 'Характеристики',
-// 				'name' => 'product',
-// 				'type' => 'text',
-// 				'required' => 1,
-// 				'default_value' => '',
-// 				'placeholder' => '',
-// 				'prepend' => '',
-// 				'append' => '',
-// 				'formatting' => 'html',
-// 				'maxlength' => '',
-// 			),
-// 		),
-// 		'location' => array (
-// 			array (
-// 				array (
-// 					'param' => 'page',
-// 					'operator' => '==',
-// 					'value' => '8',
-// 					'order_no' => 0,
-// 					'group_no' => 0,
-// 				),
-// 			),
-// 		),
-// 		'options' => array (
-// 			'position' => 'normal',
-// 			'layout' => 'no_box',
-// 			'hide_on_screen' => array (
-// 			),
-// 		),
-// 		'menu_order' => 0,
-// 	));
-// }
+function mayak_cat_description($description){
+	if(is_category()){
+	$desc = get_category( get_query_var( 'cat' ));
+	$category_id = $desc->cat_ID;
+	$description = get_term_meta ( $category_id, 'description', true );
+	if(!empty($description)){
+	$meta = '<meta name="description"  content="'.$description.'" />'."\n";
+	}
+    else {		   
+	   $description = wp_filter_nohtml_kses(substr(category_description(), 0, 280));
+	   $meta = '<meta name="description"  content="'.$description.'" />'."\n";	   
+	}
+	echo $meta;
+	}
+}
+add_action('wp_head', 'mayak_cat_description', 1, 1);
+function mayak_save_meta( $term_id ) {
+	if ( ! isset($_POST['mayak']) )
+		return;
+	$mayak = array_map('trim', $_POST['mayak']);
+	foreach( $mayak as $key => $value ){
+		if( empty($value) ){
+			delete_term_meta( $term_id, $key );
+			continue;
+		}
+		update_term_meta( $term_id, $key, $value );
+	}
+	return $term_id;
+}
+add_action("create_category", 'mayak_save_meta');
+add_action("edited_category", 'mayak_save_meta');
 
+function mayak_filter_single_cat_title($term_name) {
+    $terms = get_category( get_query_var('cat'));
+    $cat_id = $terms->cat_ID;
+    $term_name = get_term_meta ($cat_id, 'title', true);
+	return $term_name;	
+}
+add_filter('single_cat_title', 'mayak_filter_single_cat_title', 10, 1 );
+
+function mayak_single_cat_title ($term_name){
+    if(empty($term_name)){
+	    $terms = get_category( get_query_var( 'cat' ));
+	    $cat_id = $terms->cat_ID;
+	    $term_name = get_cat_name($cat_id);
+	}
+	return $term_name;
+}
+add_filter( 'single_cat_title', 'mayak_single_cat_title', 10, 1 ); 
+
+function mayak_cat_caption($caption) {
+	$terms = get_category( get_query_var( 'cat' ));
+	$cat_id = $terms->cat_ID;
+	$caption = get_cat_name($cat_id);
+    echo $caption; 
+}
+function mayak_cat_h1($name_cat) {
+	$terms = get_category( get_query_var( 'cat' ));
+	$cat_id = $terms->cat_ID;
+	$name_cat = get_term_meta ( $cat_id, 'h1', true );
+    echo $name_cat;
+	if(empty($name_cat)){
+	   echo	mayak_cat_caption($caption);
+	}
+}
 // меню в футере ==========================================================================
 
 function register_my_menus() {

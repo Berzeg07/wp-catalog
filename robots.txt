@@ -1,0 +1,3 @@
+Host: catalog.berezg.info
+Sitemap: http://catalog.berezg.xml.gz
+Sitemap: http://catalog.berezg.xml
