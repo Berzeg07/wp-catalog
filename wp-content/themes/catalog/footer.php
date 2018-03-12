@@ -1,16 +1,14 @@
 <footer class="footer">
 	<ul class="footer_list container">
-		
-		<!-- <li class="footer_copy">Copyright &#169; 2018</li>
-		 -->
 		 <li>
-		 <p>Навигация</p>
-		 <?php wp_nav_menu(array(
-                'theme_location'=>'menu',
-                'container'=>'false',
-                'depth'=>'1'
+			<p>Навигация</p>
+			<?php wp_nav_menu(array(
+					'theme_location'=>'menu',
+					'container'=>'false',
+					'depth'=>'1'
             
-            )); ?></li>
+			)); ?>
+		</li>
 		<li>
 			<p>Информация</p>
 			<?php wp_nav_menu(array( 
@@ -20,10 +18,8 @@
 			)); ?>
 		</li>
 		<li class="footer_contact">
-			<p>Контакты</p>
-			<span class="product-page_phone">+7(988)929-45-11</span><br>
-			<span class="product-page_inst">printhouse07</span><br>
-			<span class="product-page_email">test@gmail.com</span><br>
+			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-cont') ) : ?>
+    		<?php endif; ?>
 		</li>
 	</ul>
 </footer>

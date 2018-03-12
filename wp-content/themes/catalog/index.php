@@ -25,9 +25,7 @@
         <div class="content-catalog">
 
             <div class="category-top">
-<!--                 <h1 class="main-title"><?php single_cat_title()?></h1> -->
-				
-<h1 class="main-title"><?php mayak_cat_h1($name_cat) ?></h1>
+                <h1 class="main-title"><?php mayak_cat_h1($name_cat) ?></h1>
                 <?php get_template_part('templates/search'); ?>
             </div>
 			

@@ -1,4 +1,5 @@
 <?php
+
 function mayak_cat_keywords($keywords){
 	if(is_category()){
 	$terms = get_category( get_query_var( 'cat' ));
@@ -7,8 +8,10 @@ function mayak_cat_keywords($keywords){
 	echo '<meta name="keywords" content="'.$keywords.'">'."\n";
 	}
 }
+
 add_action('wp_head', 'mayak_cat_keywords', 1, 1);
 add_action("category_edit_form_fields", 'mayak_category_meta');
+
 function mayak_category_meta( $term ) {
 	?>
 		<tr class="form-field">
@@ -107,7 +110,8 @@ function mayak_cat_h1($name_cat) {
 	   echo	mayak_cat_caption($caption);
 	}
 }
-// меню в футере ==========================================================================
+
+// меню в футере ==============================================================
 
 function register_my_menus() {
   register_nav_menus(
@@ -118,6 +122,27 @@ function register_my_menus() {
 }
 add_action( 'init', 'register_my_menus' );
 
+// контакты в футере =========================================================
+register_sidebar(array(
+    'name' => 'Footer contacts',
+    'id' => 'footer-cont',
+    'description' => 'Контакты в футере',
+    'before_widget' => '<div id="footer-cont">',
+    'after_widget' => '</div>',
+    'before_title' => '<p>',
+    'after_title' => '</p>',
+	));
+
+// контакты в товарах ========================================================
+register_sidebar(array(
+    'name' => 'Product contacts',
+    'id' => 'product-contact',
+    'description' => 'Контакты в товарах',
+    'before_widget' => '<div id="product-contact">',
+    'after_widget' => '</div>',
+    'before_title' => '<p class="product-page_contact__title">',
+    'after_title' => '</p>',
+	));
 
 // сайдбар ====================================================================
 function catalog_widgets(){
@@ -133,13 +158,13 @@ function catalog_widgets(){
 }
 add_action( 'widgets_init', 'catalog_widgets' );
 
-//миниатюры анонсов записей ===================================================================
+//миниатюры анонсов записей ====================================================
 add_theme_support( 'post-thumbnails'); 
 
-// меню =======================================================================
+// меню ========================================================================
 register_nav_menu('menu', 'Меню в шапке');
 
-// хлебные крошки =============================================================
+// хлебные крошки ==============================================================
 function the_breadcrumb(){
 	global $post;
 	if(!is_home()){ 
