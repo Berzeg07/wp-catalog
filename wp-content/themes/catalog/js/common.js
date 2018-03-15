@@ -11,6 +11,7 @@ $(document).ready(function () {
 	// 	navText: ['<span class="nav-left"></span>', '<span class="nav-right"></span>'],
 	// });
 
+	// product slider
 	$('.product_slider').owlCarousel({
 		loop: true,
 		margin: 0,
@@ -29,9 +30,38 @@ $(document).ready(function () {
 		});
 	});
 
-	// Мобильное меню 
-	$(".main-nav_burger").click(function () {
-		$(".main-nav ul").slideToggle(500);
+	// Header menu
+	$(function () {
+		var menu_top = $(".main-nav ul");
+			menu_top_Height	= menu_top.height();
+
+		$(".main-nav_burger").click(function () {
+			$(".main-nav ul").slideToggle(500);
+		});
+
+		$(window).resize(function () {
+			var w = $(window).width();
+			if (w > 768 && menu_top.is(':hidden')) {
+				menu_top.removeAttr('style');
+			}
+		});
+	});
+
+	// catalog menu
+	$(function () {
+		var menu = $('.sidebar-catalog ul');
+			menuHeight	= menu.height();
+
+		$(".burger-cat").click(function () {
+			$(".sidebar-catalog ul").slideToggle(500);
+		});
+
+		$(window).resize(function () {
+			var w = $(window).width();
+			if (w > 768 && menu.is(':hidden')) {
+				menu.removeAttr('style');
+			}
+		});
 	});
 
 	// аккордеон в каталоге
@@ -51,21 +81,7 @@ $(document).ready(function () {
 
 	// бургер в каталоге
 
-	$(function () {
-		var menu = $('.cat-list');
-			menuHeight	= menu.height();
 
-		$(".burger-cat").click(function () {
-			$(".cat-list").slideToggle(500);
-		});
-
-		$(window).resize(function () {
-			var w = $(window).width();
-			if (w > 768 && menu.is(':hidden')) {
-				menu.removeAttr('style');
-			}
-		});
-	});
 
 
 

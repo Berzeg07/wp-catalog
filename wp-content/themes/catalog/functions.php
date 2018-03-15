@@ -1,5 +1,6 @@
 <?php
 
+// Выводим title / description / keywords для рубрик ==============================
 function mayak_cat_keywords($keywords){
 	if(is_category()){
 	$terms = get_category( get_query_var( 'cat' ));
@@ -144,13 +145,19 @@ register_sidebar(array(
     'after_title' => '</p>',
 	));
 
+// Кол-во символов в анонсах записей ==========================================
+	function new_excerpt_length($length) {
+		return 80;
+	}
+	add_filter('excerpt_length', 'new_excerpt_length');
+
 // сайдбар ====================================================================
 function catalog_widgets(){
 	register_sidebar( array(
 		'name' => 'Сайдбар',
 		'id' => 'homepage-sidebar',
 		'description' => 'Вывод бокового меню в каталоге.',
-		'before_widget' => '<div class="sidebar-catalog">',
+		'before_widget' => '<div class="sidebar-catalog"><div class="burger-cat"></div>',
 		'after_widget' => '</div>',
 		'before_title' => ' <h3 class="main-title cat-title">',
 		'after_title' => '</h3>',

@@ -1,7 +1,6 @@
 /*   
 Theme Name: Katalog
-Theme URI: http://wp-catalog/
-Description: Универсальный каталог товаров под любую тематику
+Description: Универсальный каталог товаров
 Author: AMRA
 Version: 1.0
 */
@@ -156,6 +155,13 @@ body {
   padding: 0 15px;
 }
 
+.blog-container{
+  max-width: 1000px;
+  outline: 1px solid red;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
 .main-title {
   color: #444;
   font-size: 22px;
@@ -205,9 +211,8 @@ body {
 
 .blog-box_btn {
   display: inline-block;
-  border: 1px solid #E8E8E8;
-  color: #3AC195;
-  background-color: transparent;
+  color: white;
+  background-color: #00AEEF;
   margin-top: 10px;
   text-decoration: none;
   padding: 5px 16px;
@@ -217,8 +222,7 @@ body {
 
 .blog-box_btn:hover {
   color: white;
-  background: #3AC195;
-  border: 1px solid #3AC195;
+  background: #1FCDFF;
 }
 
 .cart_btn {
@@ -226,14 +230,15 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #3AC195;
+  border:none;
+  background: #00AEEF;
   color: white;
   display: none;
 }
 
 .cart_btn:hover {
-  background: #5fcfaa;
-  border: 1px solid #5fcfaa;
+  background: #1FCDFF;
+  border:none;
 }
 
 .page-title {
@@ -248,10 +253,14 @@ body {
   border-bottom: 1px solid #E8E8E8;
 }
 
+
 @media only screen and (min-width: 768px) {
   .header {
     display: flex;
     justify-content: space-between;
+  }
+  .header-wrap {
+    background: #00AEEF;
   }
 }
 
@@ -261,7 +270,7 @@ body {
 
 .logo a {
   font-size: 30px;
-  color: #1FA67A;
+  color: #444;
   display: inline-block;
   text-decoration: none;
   padding: 15px 0px;
@@ -275,30 +284,29 @@ body {
 @media only screen and (min-width: 768px) {
   .logo a {
     padding: 10px 0px;
+    color:white;
   }
 }
 
 .main-nav {
   margin-bottom: 25px;
+  min-height: 50px;
+  background: #00AEEF;
+  width: 100%;
+  position: relative;
 }
 
 @media only screen and (min-width: 768px) {
   .main-nav {
     margin-bottom: 0;
+    background: none;
   }
-}
-
-.main-nav {
-  min-height: 50px;
-  background: #3AC195;
-  width: 100%;
-  position: relative;
 }
 
 .main-nav_burger {
   position: absolute;
   left: 15px;
-  top: 15px;
+  top: 16px;
   width: 33px;
   height: 23px;
   background: url(./img/burger.png) no-repeat;
@@ -306,15 +314,7 @@ body {
   cursor: pointer;
 }
 
-.main-nav_burger:hover {
-  opacity: 0.5;
-}
-
 @media only screen and (min-width: 768px) {
-  .main-nav {
-    background: none;
-    width: unset;
-  }
   .main-nav_burger {
     display: none;
   }
@@ -328,7 +328,7 @@ body {
 
 @media only screen and (min-width: 768px) {
   .main-nav ul {
-    display: flex !important;
+    display: flex;
     justify-content: space-between;
     padding-top: 0;
   }
@@ -358,30 +358,27 @@ body {
   color: white;
   display: inline-block;
   padding: 15px 0px;
-  background: #3AC195;
   text-decoration: none;
   display: block;
   transition: 0.5s;
 }
 
-.main-nav li a:hover {
-  background: #3AC195;
-}
-
 @media only screen and (min-width: 768px) {
   .main-nav li a {
-    background: white;
     display: inline-block;
-    color: #3AC195;
+    color: white;
     padding: 19px 15px;
   }
   .main-nav li a:hover {
-    background: #3AC195;
+    background: #11BFFF;
     color: white;
   }
   .main-nav .active {
     background: #3AC195;
     color: white;
+  }
+  .main-nav {
+    width: unset;
   }
 } 
 
@@ -462,7 +459,7 @@ body {
 .blog-box {
   display: flex;
   justify-content: space-between;
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 .blog-box_content {
@@ -470,25 +467,36 @@ body {
   margin: 0 auto;
 }
 
-.blog-box_item .main-title {
-  padding-bottom: 10px;
-}
-
-.blog-box_img {
-  max-width: 366px;
-  border: 1px solid #EEEEEE;
-  padding: 4px 4px 0px 4px;
-  border-radius: 5px;
-}
-
-@media only screen and (min-width: 768px) {
-  .blog-box_img {
-    height: 209px;
+@media only screen and (min-width:992px){
+  .blog-box_content{
+    margin-left: 0;
   }
 }
 
+.blog-box_item .main-title {
+  padding-bottom: 10px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.blog-box_item__title{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.blog-box_img {
+  max-width: 200px;
+  width: 100%;
+  height: 193px;
+  border: 1px solid #EEEEEE;
+  padding: 4px 4px 0px 4px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
 .blog-box_article {
-  max-width: 360px;
+  max-width: 560px;
   padding-top: 20px;
   text-align: right;
 }
@@ -513,7 +521,7 @@ body {
   display: inline-block;
   position: relative;
   padding-left: 25px;
-  margin-bottom: 20px;
+  margin-top: 8px;
   font-size: 14px;
 }
 
@@ -521,7 +529,7 @@ body {
   content: "";
   position: absolute;
   left: 0;
-  top: 0;
+  top: -2px;
   width: 17px;
   height: 17px;
   background: url(./img/calendar.svg) no-repeat;
@@ -539,7 +547,7 @@ body {
   .blog-box_item__inner {
     display: flex;
     justify-content: space-between;
-    padding: 22px 0px 55px;
+    padding: 22px 0px 24px;
   }
 }
 
@@ -555,18 +563,18 @@ body {
   height: 34px;
   cursor: pointer;
   border-radius: 4px;
-  border: 1px solid #3AC195;
+  border: 1px solid #00AEEF;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  background: #3AC195 url(./img/lupa.png) no-repeat;
+  background: #00AEEF url(./img/lupa.png) no-repeat;
   background-position: center;
   outline: none;
   transition: 0.5s;
 }
 
 .search-box button:hover {
-  background-color: #5fcfaa;
-  border: 1px solid #5fcfaa;
+  background-color: #1AC8FF;
+  border: 1px solid #1AC8FF;
 }
 
 .search-area {
@@ -698,22 +706,21 @@ body {
 .pagination li a, .pagination li span {
   display: inline-block;
   text-decoration: none;
-  border: 1px solid #E8E8E8;
-  color: #3AC195;
-  padding: 15px;
+  border: 1px solid #00AEEF;
+  color: #444;
   padding: 2px 10px;
   transition: 0.5s;
 }
 
 .pagination li a:hover {
-  background: #3AC195;
+  background: #00AEEF;
   color: white;
   border: 1px solid #3AC195;
 }
 
 @media only screen and (min-width: 768px) {
   .pagination li a, .pagination li span {
-    padding: 7px 15px;
+    padding: 4px 12px;
   }
 }
 
@@ -722,23 +729,26 @@ body {
 }
 
 .pagination .active {
-  background: #3AC195;
+  background: #00AEEF;
   color: white;
-  border: 1px solid #3AC195;
 }
 
 .footer {
+  background: #444444;
+  color:white;
   border-top: 1px solid #E8E8E8;
   padding: 15px 0px;
 }
 
 .footer p {
-  color: #444;
   font-size: 18px;
   padding-bottom: 15px;
 }
 
 @media only screen and (min-width: 500px) {
+  .footer {
+    padding: 30px 0px;
+  }
   .footer_list {
     display: flex;
     flex-wrap: wrap;
@@ -758,8 +768,14 @@ body {
 }
 
 .footer li a {
+  color:#C0B89D;
+  font-weight: 300;
   text-decoration: none;
-  color: inherit;
+}
+
+.footer li span{
+  color:#C0B89D;
+  font-weight: 300;
 }
 
 .footer_contact span {
@@ -768,7 +784,6 @@ body {
 
 .footer_phone {
   position: relative;
-  font-weight: 600;
   text-decoration: none;
   color: inherit;
   padding-left: 33px;
@@ -811,6 +826,10 @@ body {
 
 .sidebar-catalog {
   width: 100%;
+}
+
+.sidebar-catalog .categories{
+  list-style: none;
 }
 
 .sidebar-catalog .main-title {
@@ -869,17 +888,19 @@ body {
   }
 }
 
-.cat-list {
+.sidebar-catalog ul {
   display: none;
+  padding-bottom: 25px;
 }
 
 @media only screen and (min-width: 768px) {
-  .cat-list {
+  .sidebar-catalog ul {
     display: block;
+    padding-bottom: 0;
   }
 }
 
-.cat-list li ul {
+/* .cat-list li ul {
   display: none;
   border: none;
   padding-top: 15px;
@@ -892,7 +913,7 @@ body {
   padding: 5px;
   border-radius: 5px;
   transition: 0.5s;
-}
+} */
 
 .product-box {
   display: flex;
@@ -934,7 +955,7 @@ body {
 }
 
 .cart:hover {
-  border: 1px solid #E8E8E8;
+  border: 1px solid #00AEEF;
 }
 
 .cart img {
@@ -988,7 +1009,7 @@ body {
 .product-page_top {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 45px;
   flex-wrap: wrap;
 }
 
@@ -1016,15 +1037,26 @@ body {
   color: #444;
 }
 
+.product-page_price i{
+  font-size: 14px;
+}
+
 .product-page_info .product-page_price span {
   font-weight: 600;
   font-size: 20px;
 }
 
+.product_info p{
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+
 .product-page_info .product-page_contact__title {
   color: black;
   font-size: 19px;
+  padding-bottom: 10px;
   margin-bottom: 15px;
+  border-bottom: 1px solid #E8E8E8;
 }
 
 .product-page_info .product-page_contact__discounts {
@@ -1124,10 +1156,6 @@ body {
   color: white;
   padding: 0;
   margin-bottom: 0;
-}
-
-.product-page_contact {
-  padding: 14px 15px;
 }
 
 .product-page_phone, .product-page_inst, .product-page_email {
