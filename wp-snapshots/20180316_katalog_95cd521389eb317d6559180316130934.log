@@ -1,0 +1,79 @@
+********************************************************************************
+DUPLICATOR-LITE PACKAGE-LOG: 16.03.2018 13:09
+NOTICE: Do NOT post to public sites or forums 
+********************************************************************************
+VERSION:	1.2.34
+WORDPRESS:	4.9.4
+PHP INFO:	5.5.38 | SAPI: apache2handler
+SERVER:		Apache 
+PHP TIME LIMIT: (0) no time limit imposed 
+PHP MAX MEMORY: 2048M (1536M default) 
+MEMORY STACK: 26MB 
+
+********************************************************************************
+DATABASE:
+********************************************************************************
+BUILD MODE:   PHP(query limit - 100)
+MYSQLTIMEOUT: 5000
+MYSQLDUMP:    Not Supported 
+TABLES: total:15 | filtered:0 | create:15 
+FILTERED: [] 
+SQL CREATED: 20180316_katalog_95cd521389eb317d6559180316130934_database.sql 
+SQL FILE SIZE: 712.39KB (729484) 
+SQL FILE TIME: 2018-03-16 13:09:53 
+SQL RUNTIME: 1.02 sec. 
+
+******************************************************************************** 
+ARCHIVE (ZIP): 
+******************************************************************************** 
+ARCHIVE DIR:  D:/OpenServer/domains/wp-catalog2 
+ARCHIVE FILE: 20180316_katalog_95cd521389eb317d6559180316130934_archive.zip 
+FILTERS: *OFF* 
+DIRS:
+	not set 
+FILES:
+	not set 
+EXTS:  not set 
+---------------------------------------- 
+COMPRESSING 
+SIZE:	93.14MB 
+STATS:	Dirs 588 | Files 5,593 
+SQL ADDED: 20180316_katalog_95cd521389eb317d6559180316130934_database.sql 
+ZipArchive Object
+(
+    [status] => 0
+    [statusSys] => 0
+    [numFiles] => 6181
+    [filename] => D:\OpenServer\domains\wp-catalog2\wp-snapshots\tmp\20180316_katalog_95cd521389eb317d6559180316130934_archive.zip
+    [comment] => 
+)
+ 
+COMPRESSION RESULT: '1' 
+COMPRESSED SIZE: 65.4MB 
+ARCHIVE RUNTIME: 178.45 sec. 
+MEMORY STACK: 27.75MB 
+
+******************************************************************************** 
+MAKE INSTALLER: 
+******************************************************************************** 
+Build Start 
+Build Finished 
+Preping for use 
+PACK SIZE:  
+Template parsed with new data 
+Complete [D:/OpenServer/domains/wp-catalog2/wp-snapshots/tmp/20180316_katalog_95cd521389eb317d6559180316130934_installer.php] 
+Added to archive 
+
+******************************************************************************** 
+INTEGRITY CHECKS: 
+******************************************************************************** 
+SQL File: 712.39KB 
+Installer File: 445.24KB 
+Archive File: 65.4MB  
+
+********************************************************************************
+RECORD ID:[2]
+TOTAL PROCESS RUNTIME: 196.55 sec.
+PEAK PHP MEMORY USED: 29.75MB
+DONE PROCESSING => 20180316_katalog 16.03.2018 13:13
+ 

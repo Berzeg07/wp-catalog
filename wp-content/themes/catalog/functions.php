@@ -255,6 +255,15 @@ function the_breadcrumb(){
 	}
 }
 
+// Скрываем товары на главной ==============================================
+
+function exclude_category($query) {
+	if ( $query->is_feed or $query->is_home ) {
+	$query->set('category__not_in', array(18));}
+	return $query;
+	}
+	add_filter('pre_get_posts', 'exclude_category');
+
 //Пагинация ================================================================
 function catalog_pagination( $args = array() ) {
     
@@ -333,5 +342,3 @@ function catalog_pagination( $args = array() ) {
     if ( isset($echo) )
         echo $args['before_output'] . $echo . $args['after_output'];
 } 
-
-?>

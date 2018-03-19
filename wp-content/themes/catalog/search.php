@@ -10,6 +10,10 @@
         <?php endwhile; else: ?>
             <p>Поиск не дал результатов.</p>
         <?php endif;?>
+
+        <div class="search-pagination">
+            <?php catalog_pagination(); ?>
+        </div>
     </div>
 
 <?php get_footer();?>
