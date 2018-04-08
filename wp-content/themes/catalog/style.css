@@ -1,8 +1,8 @@
 /*   
 Theme Name: Katalog
-Description: Универсальный каталог товаров
+Description: Универсальный каталог товаров + Блог
 Author: AMRA
-Version: 1.0
+Version: 2.0
 */
 
 html,
@@ -147,12 +147,23 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
   color: #6B6B6B;
   font-size: 16px;
+  /* background: #F3F3F3; */
+  background: url(./img/bg4-min.jpg) no-repeat;
+  background-attachment: fixed;
+  background-size: cover; 
+  /* background: url(./img/bg3.jpg) repeat; */
+}
+
+.single-post_wrap{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .container {
   max-width: 1140px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 10px;
 }
 
 .search-pagination{
@@ -172,6 +183,10 @@ body {
   font-weight: 500;
 }
 
+.main-title_single{
+  padding-bottom: 15px;
+}
+
 .cateory-desc h2{
   color: #444;
   font-size: 20px;
@@ -182,17 +197,12 @@ body {
   padding:40px 0px;
 }
 
-.breadcrumbs-wrap {
-  max-width: 1140px;
-  margin: 25px auto;
-  padding: 0px 15px;
-}
-
 .breadcrumbs {
   border-radius: 5px;
   padding: 5px 15px;
-  background: #F5F5F5;
+  background: #ffff;
   font-size: 15px;
+  margin: 10px 0px;
 }
 
 .breadcrumbs {
@@ -254,7 +264,7 @@ body {
 }
 
 .header-wrap {
-  border-bottom: 1px solid #E8E8E8;
+  /* border-bottom: 1px solid #E8E8E8; */
 }
 
 
@@ -463,18 +473,14 @@ body {
 .blog-box {
   display: flex;
   justify-content: space-between;
-  margin-top: 30px;
 }
 
-.blog-box_content {
-  max-width: 794px;
-  margin: 0 auto;
-}
-
-@media only screen and (min-width:992px){
-  .blog-box_content{
-    margin-left: 0;
-  }
+.content-box {
+  background: white;
+  padding: 14px;
+  border-radius: 5px;
+  max-width: 793px;
+  width: 100%;
 }
 
 .blog-box_item .main-title {
@@ -598,7 +604,9 @@ body {
 .sidebar {
   display: none;
   max-width: 315px;
-  padding-left: 15px;
+  background: white;
+  border-radius: 5px;
+  padding: 15px;
   width: 100%;
 }
 
@@ -644,17 +652,17 @@ body {
 
 .sidebar_last-posts ul li {
   display: flex;
-  padding: 10px 0px;
+}
+
+.sidebar-rubricks{
+  padding-top: 15px;
 }
 
 .sidebar_last-posts ul, .sidebar-rubricks li ul {
-  padding: 10px;
+  padding: 4px;
   border: 1px solid #EEEEEE;
   border-radius: 5px;
-}
-
-.sidebar_last-posts ul li:not(:last-child) {
-  border-bottom: 1px solid #EEEEEE;
+  margin: 5px 0px;
 }
 
 .sidebar .main-title {
@@ -741,8 +749,9 @@ body {
 .footer {
   background: #444444;
   color:white;
-  border-top: 1px solid #E8E8E8;
-  padding: 15px 0px;
+  /* border-top: 1px solid #E8E8E8; */
+  padding: 10px 0px;
+  margin-top: 10px;
 }
 
 .footer p {
@@ -824,11 +833,6 @@ body {
   }
 }
 
-.content-catalog {
-  width: 100%;
-  padding-left: 10px;
-}
-
 .sidebar-catalog {
   width: 100%;
 }
@@ -842,14 +846,7 @@ body {
   color: #444;
 }
 
-@media only screen and (min-width: 768px) {
-  .sidebar-catalog {
-    max-width: 250px;
-  }
-}
-
 .sidebar-catalog ul {
-  padding: 10px;
   border-radius: 5px;
 }
 
@@ -969,7 +966,6 @@ body {
 }
 
 .category-top {
-  padding-bottom: 27px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -984,10 +980,6 @@ body {
   width: 100%;
 }
 
-.cateory-desc{
-  padding-top: 20px;
-}
-
 .cateory-desc h2,
 .cateory-desc p {
   padding-bottom: 15px;
@@ -995,7 +987,6 @@ body {
 
 .content-catalog .pagination {
   display: flex;
-  margin-bottom: 60px;
 }
 
 .content-catalog .pagination ul {
@@ -1163,6 +1154,12 @@ body {
   margin-bottom: 0;
 }
 
+.product-page{
+  background: white;
+  padding: 14px;
+  border-radius:5px;
+}
+
 .product-page_phone, .product-page_inst, .product-page_email {
   position: relative;
   padding-left: 36px;
@@ -1192,4 +1189,20 @@ body {
   top: -6px;
   background: url(./img/email.png) no-repeat;
 }
-/*# sourceMappingURL=style.css.map */
+
+.main-rubrick{
+  color: #444;
+  font-size: 17px;
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+.sidebar-catalog .cat-list .cat-item{
+  border-bottom:none;
+}
+
+.sidebar-catalog .children li:not(:last-child) {
+  margin-bottom: 4px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #EEEEEE;
+}

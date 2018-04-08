@@ -11,6 +11,12 @@ $(document).ready(function () {
 	// 	navText: ['<span class="nav-left"></span>', '<span class="nav-right"></span>'],
 	// });
 
+	// Стили главных рубрик
+	$('.cat-item a').css('color', '#444');
+	$(".cat-item ul a").css({"color":"unset", "font-size":"15px"})
+	$('.cat-item a').addClass('main-rubrick');
+	$('.cat-item ul a').removeClass('main-rubrick');
+
 	// product slider
 	$('.product_slider').owlCarousel({
 		loop: true,

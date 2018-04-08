@@ -1,14 +1,14 @@
 <?php get_header();?>
 
 <main>
-
-    <!-- blog -->
+    <!-- breadcrumbs -->
+    <div class="container">
         <?php get_template_part('templates/breadcrumbs'); ?>
+    </div>
 
-    
     <div class="container blog-box">
         <!-- Content -->
-        <div class="blog-box_content">
+        <div class="content-box">
       
         <?php 
          

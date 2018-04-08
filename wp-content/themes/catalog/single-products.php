@@ -7,10 +7,11 @@
 
 <?php get_header();?>
 
-<main>
+<main class="container">
+
     <?php get_template_part('templates/breadcrumbs'); ?>
 
-    <div class="product-page container">
+    <div class="product-page">
         
         <div class="product-page_top">
             <h1 class="main-title"><?php the_title(); ?></h1>
@@ -31,9 +32,8 @@
                 </div>
             </div>
             
-            
             <div class="product-page_info">
-                  
+
                 <div class="product_info">
                     <p><?php the_field('field1') ?></p>
                     <p><?php the_field('field2') ?></p>
@@ -42,11 +42,11 @@
                     <p><?php the_field('field5') ?></p>
                     <p class="product-page_price">Цена: <span><?php the_field('price') ?></span> <i>руб.</i></p> 
                 </div>
-
                 <div class="product-page_contact">
                     <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('product-contact') ) : ?>
                     <?php endif; ?>
                 </div>
+                
             </div>
         </div> 
 

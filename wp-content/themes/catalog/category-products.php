@@ -21,13 +21,13 @@
 </div> -->
 
 <main>
-
-    <?php get_template_part('templates/breadcrumbs'); ?>
-
+    <div class="container">
+        <?php get_template_part('templates/breadcrumbs'); ?>
+    </div>
     <div class="catalog container"> 
         <div class="catalog_inner">  
         
-            <div class="content-catalog">
+            <div class="content-catalog content-box">
 
                 <div class="category-top">
                     <h1 class="main-title"><?php mayak_cat_h1($name_cat) ?></h1>
