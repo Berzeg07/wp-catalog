@@ -147,10 +147,10 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
   color: #6B6B6B;
   font-size: 16px;
-  /* background: #F3F3F3; */
-  background: url(./img/bg4-min.jpg) no-repeat;
+  background: black;
+  /* background: url(./img/bg4-min.jpg) no-repeat;
   background-attachment: fixed;
-  background-size: cover; 
+  background-size: cover;  */
   /* background: url(./img/bg3.jpg) repeat; */
 }
 
@@ -264,6 +264,7 @@ body {
 }
 
 .header-wrap {
+  background: red;
   /* border-bottom: 1px solid #E8E8E8; */
 }
 
@@ -274,7 +275,7 @@ body {
     justify-content: space-between;
   }
   .header-wrap {
-    background: #00AEEF;
+    /* background: #00AEEF; */
   }
 }
 
