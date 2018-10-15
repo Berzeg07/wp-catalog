@@ -1,4 +1,4 @@
+<ul class="breadcrumbs">
+    <?php the_breadcrumb() ?>
+</ul>   
 
-    <ul class="breadcrumbs">
-        <?php the_breadcrumb() ?>
-    </ul>  

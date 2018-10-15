@@ -1,5 +1,31 @@
 $(document).ready(function () {
 
+	// Mobile menu
+	$(function() {
+
+		function burger() {
+			$('.main-nav').toggleClass('nav-show');
+			$('.burger').toggleClass('burger-bg');
+		};
+
+		$('.burger').click(function() {
+			burger();
+		});
+
+		$(document).click(function(event) {
+			if ($(event.target).closest(".main-nav").length) return;
+			if ($(event.target).closest(".burger").length) return;
+			$('.main-nav').removeClass('nav-show');
+			$('.burger').removeClass('burger-bg');
+			event.stopPropagation();
+		});
+
+	});
+
+
+
+	
+
 	// $('.promo_slider').owlCarousel({
 	// 	loop: true,
 	// 	margin: 0,
@@ -37,53 +63,53 @@ $(document).ready(function () {
 	});
 
 	// Header menu
-	$(function () {
-		var menu_top = $(".main-nav ul");
-			menu_top_Height	= menu_top.height();
+	// $(function () {
+	// 	var menu_top = $(".main-nav ul");
+	// 		menu_top_Height	= menu_top.height();
 
-		$(".main-nav_burger").click(function () {
-			$(".main-nav ul").slideToggle(500);
-		});
+	// 	$(".main-nav_burger").click(function () {
+	// 		$(".main-nav ul").slideToggle(500);
+	// 	});
 
-		$(window).resize(function () {
-			var w = $(window).width();
-			if (w > 768 && menu_top.is(':hidden')) {
-				menu_top.removeAttr('style');
-			}
-		});
-	});
+	// 	$(window).resize(function () {
+	// 		var w = $(window).width();
+	// 		if (w > 768 && menu_top.is(':hidden')) {
+	// 			menu_top.removeAttr('style');
+	// 		}
+	// 	});
+	// });
 
 	// catalog menu
-	$(function () {
-		var menu = $('.sidebar-catalog ul');
-			menuHeight	= menu.height();
+	// $(function () {
+	// 	var menu = $('.sidebar-catalog ul');
+	// 		menuHeight	= menu.height();
 
-		$(".burger-cat").click(function () {
-			$(".sidebar-catalog ul").slideToggle(500);
-		});
+	// 	$(".burger-cat").click(function () {
+	// 		$(".sidebar-catalog ul").slideToggle(500);
+	// 	});
 
-		$(window).resize(function () {
-			var w = $(window).width();
-			if (w > 768 && menu.is(':hidden')) {
-				menu.removeAttr('style');
-			}
-		});
-	});
+	// 	$(window).resize(function () {
+	// 		var w = $(window).width();
+	// 		if (w > 768 && menu.is(':hidden')) {
+	// 			menu.removeAttr('style');
+	// 		}
+	// 	});
+	// });
 
 	// аккордеон в каталоге
-	$(".cat-link").click(function (v) {
-		v.preventDefault();
-		var $this = $(this);
+	// $(".cat-link").click(function (v) {
+	// 	v.preventDefault();
+	// 	var $this = $(this);
 
-		if (!$this.hasClass("active")) {
-			$(".cat-link").next().slideUp();
-			$(".cat-link").removeClass("active");
-		}
+	// 	if (!$this.hasClass("active")) {
+	// 		$(".cat-link").next().slideUp();
+	// 		$(".cat-link").removeClass("active");
+	// 	}
 
-		$this.toggleClass("active");
-		$this.next().slideToggle();
+	// 	$this.toggleClass("active");
+	// 	$this.next().slideToggle();
 
-	});
+	// });
 
 	// бургер в каталоге
 
@@ -99,14 +125,14 @@ $(document).ready(function () {
 
 
 	// Fancybox
-	$("a[rel=group]").fancybox({
-		'transitionIn': 'none',
-		'transitionOut': 'none',
-		'titlePosition': 'over',
-		'titleFormat': function (title, currentArray, currentIndex, currentOpts) {
-			return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
-		}
-	});
+	// $("a[rel=group]").fancybox({
+	// 	'transitionIn': 'none',
+	// 	'transitionOut': 'none',
+	// 	'titlePosition': 'over',
+	// 	'titleFormat': function (title, currentArray, currentIndex, currentOpts) {
+	// 		return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+	// 	}
+	// });
 
 	// Modal window
 	$('a[name=modal]').click(function (e) {
@@ -166,4 +192,6 @@ $(document).ready(function () {
 	};
 
 
-});//END READY
+});
+
+//END READY

@@ -165,6 +165,19 @@ function catalog_widgets(){
 }
 add_action( 'widgets_init', 'catalog_widgets' );
 
+// function catalog_widgets(){
+// 	register_sidebar( array(
+// 		'name' => 'Сайдбар Каталога',
+// 		'id' => 'homepage-sidebar-cat',
+// 		'description' => 'Вывод бокового меню в каталоге.',
+// 		'before_widget' => '<div class="sidebar-catalog"><div class="burger-cat"></div>',
+// 		'after_widget' => '</div>',
+// 		'before_title' => ' <h3 class="main-title cat-title">',
+// 		'after_title' => '</h3>',
+// 	) );
+// }
+// add_action( 'widgets_init', 'catalog_widgets' );
+
 //миниатюры анонсов записей ====================================================
 add_theme_support( 'post-thumbnails'); 
 

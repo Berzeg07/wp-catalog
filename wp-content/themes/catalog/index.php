@@ -1,10 +1,6 @@
 <?php get_header();?>
 
 <main>
-    <!-- breadcrumbs -->
-    <div class="container">
-        <?php get_template_part('templates/breadcrumbs'); ?>
-    </div>
 
     <div class="container blog-box">
         <!-- Content -->

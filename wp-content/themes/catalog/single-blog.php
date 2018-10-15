@@ -22,6 +22,7 @@
                 <?php endif; ?>
             </div>
         </div>
+
         <!-- Sidebar -->
         <div class="sidebar">
             <?php get_sidebar();?>

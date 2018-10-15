@@ -11,21 +11,23 @@
 <body>
 
 <header>
-    <div class="header-top container" style="display:flex; justify-content:space-between;">
-        <div class="header-top_inner" style="padding-top:37px;">
-            <span style="display: inline-block;
-    font-size: 38px;
-    color: white;">Last Samurai</span>
+    <div class="header-top">
+        <div class="burger"></div>
+        <div class="header-top_inner container">
+            <div class="header-top_inner__logo">
+                <span style="">Last Samurai</span>
+            </div>
+            <div class="header-top_inner__img">
+                <img src="<?php echo get_template_directory_uri() ?> /img/t1.png">
+            </div>
         </div>
-        <div class="header-top_inner">
-            <img src="<?php echo get_template_directory_uri() ?> /img/hbg2.jpg">
-        </div>
+
     </div>
-    <div class="header-wrap">
-        <div class="header container">
-            <div class="logo"><a href="index.php"></a></div>
+    <div class="header-bottom">
+        <div class="container">
+            <!-- <div class="logo"><a href="index.php"></a></div> -->
             <nav class="main-nav">
-                <span class="main-nav_burger"></span>
+                
                 <?php wp_nav_menu(array(
                     'theme_location'=>'menu',
                     'container'=>'false',
