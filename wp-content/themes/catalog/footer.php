@@ -21,7 +21,14 @@
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-cont') ) : ?>
     		<?php endif; ?>
 		</li>
+		<li>
+			<p>Способы оплаты</p>
+			<div class="payments">
+				<img src="<?php echo get_template_directory_uri() ?>/img/payments.png" alt="">
+			</div>
+		</li>
 	</ul>
+	<div class="copy container">Copyright &copy; 2018</div>
 </footer>
 
 

@@ -35,11 +35,14 @@
             <div class="product-page_info">
 
                 <div class="product_info">
+                    <p>Информация о товаре:</p>
                     <p><?php the_field('field1') ?></p>
                     <p><?php the_field('field2') ?></p>
                     <p><?php the_field('field3') ?></p>
                     <p><?php the_field('field4') ?></p>
                     <p><?php the_field('field5') ?></p>
+                    <p><?php the_field('field6') ?></p>
+                    
                     <p class="product-page_price">Цена: <span><?php the_field('price') ?></span> <i>руб.</i></p> 
                 </div>
                 <div class="product-page_contact">

@@ -165,18 +165,42 @@ function catalog_widgets(){
 }
 add_action( 'widgets_init', 'catalog_widgets' );
 
-// function catalog_widgets(){
-// 	register_sidebar( array(
-// 		'name' => 'Сайдбар Каталога',
-// 		'id' => 'homepage-sidebar-cat',
-// 		'description' => 'Вывод бокового меню в каталоге.',
-// 		'before_widget' => '<div class="sidebar-catalog"><div class="burger-cat"></div>',
-// 		'after_widget' => '</div>',
-// 		'before_title' => ' <h3 class="main-title cat-title">',
-// 		'after_title' => '</h3>',
-// 	) );
+
+
+// ================
+// add_action('template_redirect', 'use_parent_category_template');
+// function use_parent_category_template() {
+// global $cat, $post;
+// $category = get_category($cat);
+// if (is_category()):
+// while ($category->cat_ID) {
+//         if ( file_exists(TEMPLATEPATH . "/category-" . $category->cat_ID . '.php') ) {
+//             include(TEMPLATEPATH . "/category-" . $category->cat_ID . '.php');
+//             exit;
+//         }
+// $category = get_category($category->category_parent);
+//     }
+// elseif (is_single()) :
+ 
+//     $categories = get_the_category($post->ID);
+    
+//     if (count($categories)) foreach ( $categories as $category ) {
+// while ($category->cat_ID) {
+//     	    if ( file_exists(TEMPLATEPATH . "/single-" . $category->cat_ID . '.php') ) {
+//         	    include(TEMPLATEPATH . "/single-" . $category->cat_ID . '.php');
+//             	exit;
+//         }
+    	    
+// $category = get_category($category->category_parent);
+//     }
+    
+//     }
+ 
+// endif;
 // }
-// add_action( 'widgets_init', 'catalog_widgets' );
+
+// ================
+
 
 //миниатюры анонсов записей ====================================================
 add_theme_support( 'post-thumbnails'); 

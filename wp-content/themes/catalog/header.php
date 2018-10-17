@@ -14,12 +14,25 @@
     <div class="header-top">
         <div class="burger"></div>
         <div class="header-top_inner container">
-            <div class="header-top_inner__logo">
-                <span style="">Last Samurai</span>
-            </div>
-            <div class="header-top_inner__img">
+            <!-- <div class="header-top_inner__logo"> -->
+           
+                <ul>
+                    <li><div class="main-logo"><img src="<?php echo get_template_directory_uri() ?>/img/logo.png" alt=""></div></li>
+                    <li>
+                        <span class="header_phone">+7(928)706-73-84</span><br>
+                        <span class="work_time">Ежедневно: с 9:00 до 20:00</span>
+                    </li>
+                    <li>
+                       <span class="header_inst"><a href="https://www.instagram.com/printhouse07/?hl=ru" target="_blank"> @highlandmarket</a></span>
+                    </li>
+                    <li>
+                    <?php get_template_part('templates/search'); ?>
+                    </li>
+                </ul>
+            <!-- </div> -->
+            <!-- <div class="header-top_inner__img">
                 <img src="<?php echo get_template_directory_uri() ?> /img/t1.png">
-            </div>
+            </div> -->
         </div>
 
     </div>

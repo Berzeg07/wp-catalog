@@ -34,12 +34,19 @@
                 </div>
                 
                 <div class="product-box">
-                    <?php query_posts('cat=18&paged='.$paged); ?>
-                    <?php if ( have_posts() ) : while ( have_posts() ) : the_post();?>
-                    <?php get_template_part('templates/cart') ?>
-                    <?php endwhile; ?>
-                    <?php else: ?>
-                    <?php endif; ?>
+                    <?php //query_posts('cat=18&paged='.$paged); ?>
+                   
+                    
+                    <?php 
+                    
+                    if ( have_posts() ) : while ( have_posts() ) : the_post();
+                    
+                     get_template_part('templates/cart'); 
+                     endwhile; 
+                     else: 
+                     endif; 
+                     
+                     ?>
                 </div>
 
                 <?php catalog_pagination(); ?>

@@ -1,6 +1,6 @@
-<?php get_template_part('templates/search'); ?>
+<!--<?php get_template_part('templates/search'); ?>-->
 <div class="sidebar_last-posts">
-	<h3 class="main-title">Новые статьи</h3>
+	<h3 class="main-title">Последние статьи</h3>
 	<?php
 		$ID=1; // id рубрики
 		$count=7; // кол-во записей для показа
