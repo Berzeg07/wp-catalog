@@ -43,6 +43,7 @@ $(document).ready(function () {
 	$('.cat-item a').addClass('main-rubrick');
 	$('.cat-item ul a').removeClass('main-rubrick');
 
+	// $('.related_post').addClass( "recom_slider owl-carousel " );
 	// product slider
 	$('.product_slider').owlCarousel({
 		loop: true,
@@ -54,6 +55,19 @@ $(document).ready(function () {
 		autoplaySpeed: 1000,
 		navText: ['<span class="nav-left"></span>', '<span class="nav-right"></span>'],
 	});
+
+	// recommended slider
+	// $('.recom_slider').owlCarousel({
+	// 	loop: true,
+	// 	margin: 0,
+	// 	nav: true,
+	// 	dots: true,
+	// 	items: 4,
+	// 	autoplay: true,
+	// 	autoplaySpeed: 1000,
+	// 	navText: ['<span class="nav-left"></span>', '<span class="nav-right"></span>'],
+	// });
+
 
 	$(".slider-wrap").hover(function () {
 		$(".nav-left, .nav-right").fadeIn(300);

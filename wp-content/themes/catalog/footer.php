@@ -38,7 +38,8 @@
 	<!-- JS_BLOCK -->
 	<script src="<?php echo get_template_directory_uri(); ?>/libs/jquery/jquery-3.2.1.min.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/common.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/libs/owl.carousel/owl.carousel.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/libs/owl.carousel/owl.carousel.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.maskedinput.min.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/fonts.js"></script>
     

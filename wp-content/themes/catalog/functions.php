@@ -1,4 +1,6 @@
 <?php
+define ( 'WP_POST_REVISIONS', false );
+define ('WP_DEBUG', true);
 
 // Выводим title / description / keywords для рубрик ==============================
 function mayak_cat_keywords($keywords){
@@ -201,9 +203,6 @@ add_action( 'widgets_init', 'catalog_widgets' );
 
 // ================
 
-
-//миниатюры анонсов записей ====================================================
-add_theme_support( 'post-thumbnails'); 
 
 // меню ========================================================================
 register_nav_menu('menu', 'Меню в шапке');
