@@ -34,19 +34,26 @@
                 </div>
                 
                 <div class="product-box">
-                    <?php //query_posts('cat=18&paged='.$paged); ?>
+                    <!-- <?php //query_posts('cat=18&paged='.$paged); ?>
                    
                     
                     <?php 
                     
-                    if ( have_posts() ) : while ( have_posts() ) : the_post();
+                    // if ( have_posts() ) : while ( have_posts() ) : the_post();
                     
-                     get_template_part('templates/cart'); 
-                     endwhile; 
-                     else: 
-                     endif; 
+                    //  get_template_part('templates/cart'); 
+                    //  endwhile; 
+                    //  else: 
+                    //  endif; 
                      
-                     ?>
+                     ?> -->
+                      <?php
+                        if ( have_posts() ) : query_posts('cat=18');  while (have_posts()) : the_post(); 
+                        get_template_part('templates/cart');
+                        endwhile; 
+                        endif;
+                        wp_reset_query();                
+                       ?>
                 </div>
 
                 <?php catalog_pagination(); ?>

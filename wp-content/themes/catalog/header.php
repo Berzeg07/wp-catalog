@@ -40,4 +40,17 @@
             </nav>
         </div>
     </div>
+    <div class="header-banner">
+        <div class="promo_slider owl-carousel">
+            <div class="slide">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/bgb.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/bgb.jpg" alt="">                    
+            </div>
+            <div class="slide">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/bgb.jpg" alt="">                        
+            </div>
+        </div>
+    </div>
 </header>  

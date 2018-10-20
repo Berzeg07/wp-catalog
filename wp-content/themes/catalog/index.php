@@ -21,38 +21,24 @@
         <!-- Content -->
         <div class="content-box product-box">
 
-        <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
+            <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
+                
+                    $cat = get_category(get_query_var('cat'),false);
+                    $cat_parent = $cat->parent; // ID родительской категории
+                    $current_cat = get_query_var('cat'); // ID текущей категории
+                    
+                    $ancestors = get_ancestors( $current_cat, 'category' );
+                    if (in_array(18, $ancestors)) {
+                        get_template_part('templates/cart');
+                    }else{
+                        get_template_part('templates/post');
+                    }
+                endwhile;
+                else:
+                endif;
+            ?>
 
-                // $getcat = get_the_category();
-                // $cat = $getcat[0]->cat_ID;
-
-                // $categories = get_categories( array(
-                //     'type'         => 'post',
-                //     'child_of'     => 18
-                // ) );
-
-                $cat = get_category(get_query_var('cat'),false);
-                $cat_parent = $cat->parent; // ID родительской категории
-                $current_cat = get_query_var('cat'); // ID текущей категории
-                if ($cat_parent == 18 || $cat_parent == 19) {
-                    get_template_part('templates/cart');
-                } else {
-                    get_template_part('templates/post');
-                }
-                // if($cat = 1){
-                //     get_template_part('templates/post');
-                // }
-                // else{
-                //     get_template_part('templates/cart');
-                // }
-            endwhile;
-            else:
-            endif;
-        ?>
-
-           <?php catalog_pagination(); ?>
-
-
+            <?php catalog_pagination(); ?>
 
         </div>
 

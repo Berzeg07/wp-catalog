@@ -202,9 +202,42 @@ body {
   padding: 5px 15px;
   background: #ffff;
   font-size: 11px;
-  margin: 20px 0px 14px;
+  margin: 5px 0px 14px;
   box-shadow: 0 4px 64px rgba(0, 0, 0, .05), 0 0 2px rgba(0, 0, 0, .15);
   transition: box-shadow .12s ease;
+}
+
+.pt-cv-ifield .pt-cv-content .btn{
+  background: #00AEEF;
+  outline: none;
+  border: none;
+}
+
+.pt-cv-ifield .pt-cv-title a{
+  color:#444;
+}
+
+.pt-cv-ifield .pt-cv-content .btn:hover{
+  background: #1AC8FF;
+}
+
+.article-main{
+  background: #FAFAFA;
+  padding: 15px 0px;
+}
+
+.article-main .main-title{
+  padding-bottom: 15px;
+}
+
+.recom_slider .cart{
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .recom_slider .cart{
+    margin: unset;
+  }
 }
 
 ul.related_post li a{
@@ -215,6 +248,13 @@ ul.related_post li a{
 }
 .wp_rp_wrap{
   margin-bottom: 20px;
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp_rp_wrap{
+    text-align: left;
+  }
 }
 
 .mag-img{
@@ -964,6 +1004,11 @@ ul.related_post li a{
   padding: 14px 6px 14px;
   box-shadow: 0 4px 64px rgba(0, 0, 0, .05), 0 0 2px rgba(0, 0, 0, .15);
   transition: box-shadow .12s ease;
+}
+
+.recom_slider .cart{
+  width: unset;
+  margin: 10px 1px;
 }
 
 .recom{

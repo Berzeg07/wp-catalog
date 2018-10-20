@@ -22,20 +22,16 @@ $(document).ready(function () {
 
 	});
 
-
-
-	
-
-	// $('.promo_slider').owlCarousel({
-	// 	loop: true,
-	// 	margin: 0,
-	// 	nav: true,
-	// 	dots: true,
-	// 	items: 1,
-	// 	autoplay: false,
-	// 	autoplaySpeed: 1000,
-	// 	navText: ['<span class="nav-left"></span>', '<span class="nav-right"></span>'],
-	// });
+	$('.promo_slider').owlCarousel({
+		loop: true,
+		margin: 0,
+		nav: true,
+		dots: true,
+		items: 1,
+		autoplay: false,
+		autoplaySpeed: 1000,
+		navText: ['<span class="nav-left"></span>', '<span class="nav-right"></span>'],
+	});
 
 	// Стили главных рубрик
 	$('.cat-item a').css('color', '#444');
@@ -43,7 +39,6 @@ $(document).ready(function () {
 	$('.cat-item a').addClass('main-rubrick');
 	$('.cat-item ul a').removeClass('main-rubrick');
 
-	// $('.related_post').addClass( "recom_slider owl-carousel " );
 	// product slider
 	$('.product_slider').owlCarousel({
 		loop: true,
@@ -55,19 +50,38 @@ $(document).ready(function () {
 		autoplaySpeed: 1000,
 		navText: ['<span class="nav-left"></span>', '<span class="nav-right"></span>'],
 	});
+	
 
-	// recommended slider
-	// $('.recom_slider').owlCarousel({
-	// 	loop: true,
-	// 	margin: 0,
-	// 	nav: true,
-	// 	dots: true,
-	// 	items: 4,
-	// 	autoplay: true,
-	// 	autoplaySpeed: 1000,
-	// 	navText: ['<span class="nav-left"></span>', '<span class="nav-right"></span>'],
-	// });
-
+	// recom slider
+	$('.recom_slider').owlCarousel({
+		loop: true,
+		margin: 10,
+		nav: true,
+		dots: false,
+		autoplay: false,
+		autoplaySpeed: 1000,
+		navText: ['<span class="nav-left"></span>', '<span class="nav-right"></span>'],
+		responsive:{
+            0:{
+                items:1
+            },
+            320:{
+                items:1
+            },
+            480:{
+                items:2 
+            },
+            768:{
+                items:3
+			}, 
+			992:{
+                items:4
+			}, 
+			1200:{
+                items:5
+            }     
+        }
+	});
 
 	$(".slider-wrap").hover(function () {
 		$(".nav-left, .nav-right").fadeIn(300);
