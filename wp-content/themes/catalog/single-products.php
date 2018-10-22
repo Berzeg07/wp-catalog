@@ -19,43 +19,48 @@
         </div>
 
         <div class="product-page_inner">
+            <div id="slider-black" class="fotorama tab_colors product-slider" data-nav="thumbs">
+                <img src="<?php the_field('img_1'); ?>" alt="" width="150" height="160">
+                <img src="<?php the_field('img_2'); ?>" alt="" width="150" height="160">
+                <img id="img_5-White" src="<?php the_field('img_17-WBlack'); ?>" alt="" width="150" height="160">
+                <img id="img_6-White" src="<?php the_field('img_18-WBlack'); ?>" alt="" width="150" height="160">
+            </div>
+            <div id="slider-white" class="fotorama tab_colors product-slider" data-nav="thumbs">
+                <img id="img_5-White" src="<?php the_field('img_5-White'); ?>" alt="" width="150" height="160">
+                <img id="img_6-White" src="<?php the_field('img_6-White'); ?>" alt="" width="150" height="160">
+                <img src="<?php the_field('img_13-WWhite'); ?>" alt="" width="150" height="160">
+                <img src="<?php the_field('img_14-WWhite'); ?>" alt="" width="150" height="160">
+            </div>
+            <div id="slider-red" class="fotorama tab_colors product-slider" data-nav="thumbs">
+                <img id="img_5-White" src="<?php the_field('img_9-Red'); ?>" alt="" width="150" height="160">
+                <img id="img_6-White" src="<?php the_field('img_10-Red'); ?>" alt="" width="150" height="160">
+                <img id="img_5-White" src="<?php the_field('img_21-WRed'); ?>" alt="" width="150" height="160">
+                <img id="img_6-White" src="<?php the_field('img_22-WRed'); ?>" alt="" width="150" height="160">
+            </div>
 
-        <div class="fotorama" data-nav="thumbs">
-          <img src="<?php the_field('img_1'); ?>" alt="" width="150" height="160">
-          <img src="<?php the_field('img_2'); ?>" alt="" width="150" height="160">
-          <img src="<?php the_field('img_3'); ?>" alt="" width="150" height="160">
-        </div>
-
-            <!-- <div class="product_slider owl-carousel owl-theme">
-                <div class="slide">
-                    <img src="<?php the_field('img_1'); ?>" alt="">
-                </div>
-                <div class="slide">
-                    <img src="<?php the_field('img_2'); ?>" alt="">
-                </div>
-                <div class="slide">
-                    <img src="<?php the_field('img_3'); ?>" alt="">
-                </div>
-            </div> -->
             
             <div class="product-page_info">
+                <ul class="product_info">
+                    <li class="product_info__title">Информация о товаре:</li>
+                    <li><?php the_field('field1') ?></li>
+                    <li><?php the_field('field2') ?></li>
+                    <li><?php the_field('field3') ?></li>
+                    <li><?php the_field('field4') ?></li>
+                    <li><?php the_field('field5') ?></li>
+                    <li class="important-field"><?php the_field('field6') ?></li>
 
-                <div class="product_info">
-                    <p>Информация о товаре:</p>
-                    <p><?php the_field('field1') ?></p>
-                    <p><?php the_field('field2') ?></p>
-                    <p><?php the_field('field3') ?></p>
-                    <p><?php the_field('field4') ?></p>
-                    <p><?php the_field('field5') ?></p>
-                    <p><?php the_field('field6') ?></p>
-                    
-                    <p class="product-page_price"><span><?php the_field('price') ?></span> <i>&#8381;</i></p> 
-                </div>
+                    <li class="price-box">
+                        <p>Расчет цены по типу изделия:</p>
+                        <?php the_field('typeProduct-tab') ?>
+                        <p class="product-page_price">Итоговая стоимость: <span><?php the_field('price') ?></span> <i>&#8381;</i></p>
+                    </li>
+    
+                    <li><?php the_field('color-btn') ?></li>   
+                </ul>
                 <div class="product-page_contact">
                     <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('product-contact') ) : ?>
                     <?php endif; ?>
                 </div>
-                
             </div>
         </div> 
         <div class="product-page_article">

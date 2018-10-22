@@ -5,7 +5,7 @@
 ?>
 <?php get_header();?>
 <main>
-    <div class="container">
+    <div class="container page-main">
         <p class="main-title">Каталог товаров</p>
         <!-- <div class="recom_slider owl-carousel owl-theme">
         <?php
@@ -41,6 +41,7 @@
             <?php echo do_shortcode("[pt_view id=c84a8a08xz]"); ?>
         </div>
     </div>
+    <?php get_template_part('templates/advantage'); ?>
     <div class="article-main">
         <div class="container">
         <h1 class="main-title">Каталог товаров Highland Market</h1>

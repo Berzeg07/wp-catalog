@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+
 	// Mobile menu
 	$(function() {
 
@@ -50,7 +51,47 @@ $(document).ready(function () {
 		autoplaySpeed: 1000,
 		navText: ['<span class="nav-left"></span>', '<span class="nav-right"></span>'],
 	});
-	
+
+	$('.color-lists a').click(function(e) {
+		e.preventDefault();
+		$('a').removeClass('active');
+		$(this).addClass('active');
+		var ColorCheck = $(this).html();
+		$('.color-name').html('Цвет - ' + ColorCheck);
+		var tab = $(this).attr('href');
+		$('.tab_colors').not(tab).css({'display':'none'});
+		$(tab).fadeIn(400);       
+	});
+
+	var BasePrice = Number($('.product-page_price span').html());
+	var ShippingPrice = 200;
+	var LaykraPrice = 150;
+	var NewPrice = 0;
+	// console.log(BasePrice);
+	$('.typeProduct-tab a').click(function(e) {
+		e.preventDefault();
+		$('a').removeClass('typeProductActive');
+		$(this).addClass('typeProductActive');
+		var GetAttr = $(this).attr('href');
+
+		if(GetAttr == '#man-cotton'){
+			NewPrice = BasePrice;
+			$('.product-page_price span').html(NewPrice);
+			console.log(NewPrice);
+		}
+		if(GetAttr == '#shipping'){
+			NewPrice = NewPrice + ShippingPrice;
+			$('.product-page_price span').html(NewPrice);
+		}
+		if(GetAttr == '#laykra'){
+			NewPrice = BasePrice + LaykraPrice;
+			$('.product-page_price span').html(NewPrice);
+			// if(GetAttr == '#shipping'){
+			// 	NewPrice = NewPrice + 200;
+			// 	$('.product-page_price span').html(NewPrice);
+			// }
+		}
+	});
 
 	// recom slider
 	$('.recom_slider').owlCarousel({

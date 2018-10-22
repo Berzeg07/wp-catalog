@@ -1,5 +1,4 @@
 <?php get_header();?>
-
 <main>
     <div class="container">
         <?php get_template_part('templates/breadcrumbs'); ?>
@@ -18,9 +17,7 @@
     </div>
 
     <div class="container blog-box">
-        <!-- Content -->
         <div class="content-box product-box">
-
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
                 
                     $cat = get_category(get_query_var('cat'),false);
@@ -37,9 +34,7 @@
                 else:
                 endif;
             ?>
-
             <?php catalog_pagination(); ?>
-
         </div>
 
         <!-- Sidebar -->
@@ -47,6 +42,7 @@
             <?php get_sidebar();?>
         </div>
     </div>
+    
     <div class="cateory-desc container">
          <?php
              if (is_category()) {
@@ -57,5 +53,4 @@
          ?>
      </div>
 </main>
-
 <?php get_footer();?>
