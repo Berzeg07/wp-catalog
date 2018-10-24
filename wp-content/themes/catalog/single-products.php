@@ -15,7 +15,7 @@
         
         <div class="product-page_top">
             <h1 class="main-title"><?php the_title(); ?></h1>
-            <span>Артикул: <?php the_field('artikul') ?></span>
+            <span class="articul">Артикул: <?php the_field('artikul') ?></span>
         </div>
 
         <div class="product-page_inner">
@@ -55,7 +55,7 @@
                         <p class="product-page_price">Итоговая стоимость: <span><?php the_field('price') ?></span> <i>&#8381;</i></p>
                     </li>
     
-                    <li><?php the_field('color-btn') ?></li>   
+                    <li class="color-box"><?php the_field('color-btn') ?></li>   
                 </ul>
                 <div class="product-page_contact">
                     <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('product-contact') ) : ?>

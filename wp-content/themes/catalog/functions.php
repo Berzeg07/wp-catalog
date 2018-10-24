@@ -1,6 +1,7 @@
 <?php
 define ( 'WP_POST_REVISIONS', false );
 define ('WP_DEBUG', true);
+add_filter('show_admin_bar', '__return_false');
 
 // Выводим title / description / keywords для рубрик ==============================
 function mayak_cat_keywords($keywords){
@@ -146,6 +147,16 @@ register_sidebar(array(
     'before_title' => '<p class="product-page_contact__title">',
     'after_title' => '</p>',
 	));
+// Рубрики в мобильном меню
+	register_sidebar(array(
+		'name' => 'Каталог в меню',
+		'id' => 'menu-catalog',
+		'description' => 'Рубрики в мобильном меню',
+		'before_widget' => '<div class="menu-catalog">',
+		'after_widget' => '</div>',
+		'before_title' => '<p>',
+		'after_title' => '</p>',
+		));
 
 // Кол-во символов в анонсах записей ==========================================
 	function new_excerpt_length($length) {
@@ -164,6 +175,8 @@ function catalog_widgets(){
 		'before_title' => ' <h3 class="main-title cat-title">',
 		'after_title' => '</h3>',
 	) );
+
+
 }
 add_action( 'widgets_init', 'catalog_widgets' );
 
